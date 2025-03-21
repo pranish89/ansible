@@ -5,7 +5,7 @@ ek---
   command: apt-get update
      
 - name: Installing java
-  yum :
+  apt:
     name: default-jdk
     
 
