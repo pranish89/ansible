@@ -17,7 +17,7 @@
   
 - name: Downloading required tomcat
   get_url: 
-    url: https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.69/bin/apache-tomcat-9.0.69.tar.gz
+    url: http://redrockdigimark.com/apachemirror/tomcat/tomcat-8/v8.5.31/bin/apache-tomcat-8.5.31.tar.gz
     dest: /opt
 
 - name: Extracting Downloaded tomcat
