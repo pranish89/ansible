@@ -1,0 +1,8 @@
+ansible-galaxy init tomcat
+ansible-galaxy init maven
+cd tomcat
+ls
+cd templates
+vi tomcat_role.j2
+
+
