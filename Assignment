@@ -74,7 +74,7 @@ MAVEN
 # tasks file for maven-setup-role
 
 - name: add apt respository
-  ansible.builtin.apt_repository: 
+  apt_repository: 
     repo: "ppa:webupd8team/java"
     state: present
 
@@ -82,19 +82,19 @@ MAVEN
   command: apt update
 
 - name: Installing java 
-  yum:
+  apt:
    name: default-jdk
    state: present
 
 - name: Downloading Maven
   get_url: 
     url: http://apache.mirror.digitalpacific.com.au/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz
-    dest: /home/rlateu/Downloads
+    dest: /home/edureka/Downloads
 
 - name: Extracting Maven
   unarchive: 
-    src: "/home/rlateu/Downloads/apache-maven-3.3.9-bin.tar.gz"
-    dest: "/home/rlateu/Downloads"
+    src: "/home/edureka/Downloads/apache-maven-3.3.9-bin.tar.gz"
+    dest: "/home/edureka/Downloads"
     remote_src: yes
 
 - name: moving maven to /opt folder maven
@@ -104,7 +104,7 @@ MAVEN
   alternatives:
     name: maven
     link: /usr/bin/mvn
-    path: /opt/apache-maven-3.3.9/bin/mvn 
+    path: /opt/apache-maven-3.3.9/bin/mvn 1001
 
  
 
@@ -114,6 +114,19 @@ MAVEN
   roles:
     - role: maven-setup-role 
     - role: apache-tomcat-setup-role
+
+- name: Install add-apt-repostory
+  become: yes
+  apt: name=software-properties-common state=latest
+
+- name: Add Oracle Java Repository
+  become: yes
+  apt_repository: repo='ppa:webupd8team/java'
+
+- name: Installing python
+  apt:
+   name: python-software-properties
+   state: present
 
 
    
