@@ -1,4 +1,4 @@
----
+ek---
 # tasks file for apache-tomcat-setup-role
 
 - name: Update repo
@@ -98,7 +98,7 @@ MAVEN
     remote_src: yes
 
 - name: moving maven to /opt folder maven
-  command: mv /home/rlateu/Downloads/apache-maven-3.3.9 /opt
+  command: mv /home/edureka/Downloads/apache-maven-3.3.9 /opt
 
 - name: update maven
   alternatives:
