@@ -17,7 +17,7 @@ ek---
   
 - name: Downloading required tomcat
   get_url: 
-    url: http://redrockdigimark.com/apachemirror/tomcat/tomcat-8/v8.5.31/bin/apache-tomcat-8.5.31.tar.gz
+    url:  https://archive.apache.org/dist/tomcat/tomcat-9/v9.0.93/bin/apache-tomcat-9.0.93.tar.gz
     dest: /opt
 
 - name: Extracting Downloaded tomcat
@@ -88,7 +88,7 @@ MAVEN
 
 - name: Downloading Maven
   get_url: 
-    url: http://apache.mirror.digitalpacific.com.au/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz
+    url: https://dlcdn.apache.org/maven/maven-3/3.9.9/binaries/apache-maven-3.9.9-bin.tar.gz
     dest: /home/edureka/Downloads
 
 - name: Extracting Maven
